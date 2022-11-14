@@ -1,0 +1,686 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF0F1B3C29221F600062DA62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B3B29221F600062DA62 /* AppDelegate.swift */; };
+		CF0F1B3E29221F600062DA62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B3D29221F600062DA62 /* SceneDelegate.swift */; };
+		CF0F1B4629221F600062DA62 /* tawktoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B4429221F600062DA62 /* tawktoTest.xcdatamodeld */; };
+		CF0F1B4829221F620062DA62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF0F1B4729221F620062DA62 /* Assets.xcassets */; };
+		CF0F1B4B29221F620062DA62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF0F1B4929221F620062DA62 /* LaunchScreen.storyboard */; };
+		CF0F1B5629221F620062DA62 /* tawktoTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B5529221F620062DA62 /* tawktoTestTests.swift */; };
+		CF0F1B6029221F620062DA62 /* tawktoTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B5F29221F620062DA62 /* tawktoTestUITests.swift */; };
+		CF0F1B6229221F620062DA62 /* tawktoTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B6129221F620062DA62 /* tawktoTestUITestsLaunchTests.swift */; };
+		CF0F1B71292220980062DA62 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B6F292220980062DA62 /* UserListVC.swift */; };
+		CF0F1B72292220980062DA62 /* UserListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0F1B70292220980062DA62 /* UserListVC.xib */; };
+		CF0F1B752922216D0062DA62 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B742922216D0062DA62 /* UserDetailView.swift */; };
+		CF0F1B79292224340062DA62 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B77292224340062DA62 /* UserCell.swift */; };
+		CF0F1B7A292224340062DA62 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0F1B78292224340062DA62 /* UserCell.xib */; };
+		CF0F1B7D292225EC0062DA62 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B7C292225EC0062DA62 /* UITableViewCell+Extension.swift */; };
+		CF0F1B7F292226120062DA62 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B7E292226120062DA62 /* String+Extension.swift */; };
+		CF0F1B81292227620062DA62 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B80292227620062DA62 /* UIView+Extension.swift */; };
+		CF0F1B852922284A0062DA62 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B842922284A0062DA62 /* SkeletonView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF0F1B5229221F620062DA62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF0F1B3029221F600062DA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF0F1B3729221F600062DA62;
+			remoteInfo = tawktoTest;
+		};
+		CF0F1B5C29221F620062DA62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF0F1B3029221F600062DA62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF0F1B3729221F600062DA62;
+			remoteInfo = tawktoTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CF0F1B3829221F600062DA62 /* tawktoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tawktoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0F1B3B29221F600062DA62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF0F1B3D29221F600062DA62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CF0F1B4529221F600062DA62 /* tawktoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tawktoTest.xcdatamodel; sourceTree = "<group>"; };
+		CF0F1B4729221F620062DA62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF0F1B4A29221F620062DA62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF0F1B4C29221F620062DA62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF0F1B5129221F620062DA62 /* tawktoTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tawktoTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0F1B5529221F620062DA62 /* tawktoTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tawktoTestTests.swift; sourceTree = "<group>"; };
+		CF0F1B5B29221F620062DA62 /* tawktoTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tawktoTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0F1B5F29221F620062DA62 /* tawktoTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tawktoTestUITests.swift; sourceTree = "<group>"; };
+		CF0F1B6129221F620062DA62 /* tawktoTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tawktoTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CF0F1B6F292220980062DA62 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
+		CF0F1B70292220980062DA62 /* UserListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListVC.xib; sourceTree = "<group>"; };
+		CF0F1B742922216D0062DA62 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		CF0F1B77292224340062DA62 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		CF0F1B78292224340062DA62 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		CF0F1B7C292225EC0062DA62 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		CF0F1B7E292226120062DA62 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		CF0F1B80292227620062DA62 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		CF0F1B842922284A0062DA62 /* SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF0F1B3529221F600062DA62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF0F1B4E29221F620062DA62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF0F1B5829221F620062DA62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF0F1B2F29221F600062DA62 = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B3A29221F600062DA62 /* tawktoTest */,
+				CF0F1B5429221F620062DA62 /* tawktoTestTests */,
+				CF0F1B5E29221F620062DA62 /* tawktoTestUITests */,
+				CF0F1B3929221F600062DA62 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF0F1B3929221F600062DA62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B3829221F600062DA62 /* tawktoTest.app */,
+				CF0F1B5129221F620062DA62 /* tawktoTestTests.xctest */,
+				CF0F1B5B29221F620062DA62 /* tawktoTestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF0F1B3A29221F600062DA62 /* tawktoTest */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B83292228380062DA62 /* Helper */,
+				CF0F1B7B292225D00062DA62 /* Extension */,
+				CF0F1B6E292220830062DA62 /* Features */,
+				CF0F1B3B29221F600062DA62 /* AppDelegate.swift */,
+				CF0F1B3D29221F600062DA62 /* SceneDelegate.swift */,
+				CF0F1B4729221F620062DA62 /* Assets.xcassets */,
+				CF0F1B4929221F620062DA62 /* LaunchScreen.storyboard */,
+				CF0F1B4C29221F620062DA62 /* Info.plist */,
+				CF0F1B4429221F600062DA62 /* tawktoTest.xcdatamodeld */,
+			);
+			path = tawktoTest;
+			sourceTree = "<group>";
+		};
+		CF0F1B5429221F620062DA62 /* tawktoTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B5529221F620062DA62 /* tawktoTestTests.swift */,
+			);
+			path = tawktoTestTests;
+			sourceTree = "<group>";
+		};
+		CF0F1B5E29221F620062DA62 /* tawktoTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B5F29221F620062DA62 /* tawktoTestUITests.swift */,
+				CF0F1B6129221F620062DA62 /* tawktoTestUITestsLaunchTests.swift */,
+			);
+			path = tawktoTestUITests;
+			sourceTree = "<group>";
+		};
+		CF0F1B6E292220830062DA62 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B732922209C0062DA62 /* User */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		CF0F1B732922209C0062DA62 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B76292224240062DA62 /* Cell */,
+				CF0F1B6F292220980062DA62 /* UserListVC.swift */,
+				CF0F1B70292220980062DA62 /* UserListVC.xib */,
+				CF0F1B742922216D0062DA62 /* UserDetailView.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		CF0F1B76292224240062DA62 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B77292224340062DA62 /* UserCell.swift */,
+				CF0F1B78292224340062DA62 /* UserCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CF0F1B7B292225D00062DA62 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B7C292225EC0062DA62 /* UITableViewCell+Extension.swift */,
+				CF0F1B7E292226120062DA62 /* String+Extension.swift */,
+				CF0F1B80292227620062DA62 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CF0F1B83292228380062DA62 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B842922284A0062DA62 /* SkeletonView.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF0F1B3729221F600062DA62 /* tawktoTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF0F1B6529221F620062DA62 /* Build configuration list for PBXNativeTarget "tawktoTest" */;
+			buildPhases = (
+				CF0F1B3429221F600062DA62 /* Sources */,
+				CF0F1B3529221F600062DA62 /* Frameworks */,
+				CF0F1B3629221F600062DA62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tawktoTest;
+			productName = tawktoTest;
+			productReference = CF0F1B3829221F600062DA62 /* tawktoTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF0F1B5029221F620062DA62 /* tawktoTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF0F1B6829221F620062DA62 /* Build configuration list for PBXNativeTarget "tawktoTestTests" */;
+			buildPhases = (
+				CF0F1B4D29221F620062DA62 /* Sources */,
+				CF0F1B4E29221F620062DA62 /* Frameworks */,
+				CF0F1B4F29221F620062DA62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF0F1B5329221F620062DA62 /* PBXTargetDependency */,
+			);
+			name = tawktoTestTests;
+			productName = tawktoTestTests;
+			productReference = CF0F1B5129221F620062DA62 /* tawktoTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CF0F1B5A29221F620062DA62 /* tawktoTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF0F1B6B29221F620062DA62 /* Build configuration list for PBXNativeTarget "tawktoTestUITests" */;
+			buildPhases = (
+				CF0F1B5729221F620062DA62 /* Sources */,
+				CF0F1B5829221F620062DA62 /* Frameworks */,
+				CF0F1B5929221F620062DA62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF0F1B5D29221F620062DA62 /* PBXTargetDependency */,
+			);
+			name = tawktoTestUITests;
+			productName = tawktoTestUITests;
+			productReference = CF0F1B5B29221F620062DA62 /* tawktoTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF0F1B3029221F600062DA62 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					CF0F1B3729221F600062DA62 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					CF0F1B5029221F620062DA62 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = CF0F1B3729221F600062DA62;
+					};
+					CF0F1B5A29221F620062DA62 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = CF0F1B3729221F600062DA62;
+					};
+				};
+			};
+			buildConfigurationList = CF0F1B3329221F600062DA62 /* Build configuration list for PBXProject "tawktoTest" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF0F1B2F29221F600062DA62;
+			productRefGroup = CF0F1B3929221F600062DA62 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF0F1B3729221F600062DA62 /* tawktoTest */,
+				CF0F1B5029221F620062DA62 /* tawktoTestTests */,
+				CF0F1B5A29221F620062DA62 /* tawktoTestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF0F1B3629221F600062DA62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF0F1B7A292224340062DA62 /* UserCell.xib in Resources */,
+				CF0F1B4B29221F620062DA62 /* LaunchScreen.storyboard in Resources */,
+				CF0F1B4829221F620062DA62 /* Assets.xcassets in Resources */,
+				CF0F1B72292220980062DA62 /* UserListVC.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF0F1B4F29221F620062DA62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF0F1B5929221F620062DA62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF0F1B3429221F600062DA62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF0F1B7F292226120062DA62 /* String+Extension.swift in Sources */,
+				CF0F1B852922284A0062DA62 /* SkeletonView.swift in Sources */,
+				CF0F1B7D292225EC0062DA62 /* UITableViewCell+Extension.swift in Sources */,
+				CF0F1B4629221F600062DA62 /* tawktoTest.xcdatamodeld in Sources */,
+				CF0F1B81292227620062DA62 /* UIView+Extension.swift in Sources */,
+				CF0F1B71292220980062DA62 /* UserListVC.swift in Sources */,
+				CF0F1B79292224340062DA62 /* UserCell.swift in Sources */,
+				CF0F1B3C29221F600062DA62 /* AppDelegate.swift in Sources */,
+				CF0F1B752922216D0062DA62 /* UserDetailView.swift in Sources */,
+				CF0F1B3E29221F600062DA62 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF0F1B4D29221F620062DA62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF0F1B5629221F620062DA62 /* tawktoTestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF0F1B5729221F620062DA62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF0F1B6229221F620062DA62 /* tawktoTestUITestsLaunchTests.swift in Sources */,
+				CF0F1B6029221F620062DA62 /* tawktoTestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF0F1B5329221F620062DA62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF0F1B3729221F600062DA62 /* tawktoTest */;
+			targetProxy = CF0F1B5229221F620062DA62 /* PBXContainerItemProxy */;
+		};
+		CF0F1B5D29221F620062DA62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF0F1B3729221F600062DA62 /* tawktoTest */;
+			targetProxy = CF0F1B5C29221F620062DA62 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF0F1B4929221F620062DA62 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF0F1B4A29221F620062DA62 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF0F1B6329221F620062DA62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF0F1B6429221F620062DA62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF0F1B6629221F620062DA62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SA797GRG57;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tawktoTest/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tawktoTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CF0F1B6729221F620062DA62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SA797GRG57;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tawktoTest/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tawktoTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CF0F1B6929221F620062DA62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SA797GRG57;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tawktoTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tawktoTest.app/tawktoTest";
+			};
+			name = Debug;
+		};
+		CF0F1B6A29221F620062DA62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SA797GRG57;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tawktoTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tawktoTest.app/tawktoTest";
+			};
+			name = Release;
+		};
+		CF0F1B6C29221F620062DA62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SA797GRG57;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tawktoTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = tawktoTest;
+			};
+			name = Debug;
+		};
+		CF0F1B6D29221F620062DA62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SA797GRG57;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tawktoTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = tawktoTest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF0F1B3329221F600062DA62 /* Build configuration list for PBXProject "tawktoTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF0F1B6329221F620062DA62 /* Debug */,
+				CF0F1B6429221F620062DA62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF0F1B6529221F620062DA62 /* Build configuration list for PBXNativeTarget "tawktoTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF0F1B6629221F620062DA62 /* Debug */,
+				CF0F1B6729221F620062DA62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF0F1B6829221F620062DA62 /* Build configuration list for PBXNativeTarget "tawktoTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF0F1B6929221F620062DA62 /* Debug */,
+				CF0F1B6A29221F620062DA62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF0F1B6B29221F620062DA62 /* Build configuration list for PBXNativeTarget "tawktoTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF0F1B6C29221F620062DA62 /* Debug */,
+				CF0F1B6D29221F620062DA62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CF0F1B4429221F600062DA62 /* tawktoTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF0F1B4529221F600062DA62 /* tawktoTest.xcdatamodel */,
+			);
+			currentVersion = CF0F1B4529221F600062DA62 /* tawktoTest.xcdatamodel */;
+			path = tawktoTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CF0F1B3029221F600062DA62 /* Project object */;
+}
