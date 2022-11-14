@@ -24,6 +24,10 @@
 		CF0F1B7F292226120062DA62 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B7E292226120062DA62 /* String+Extension.swift */; };
 		CF0F1B81292227620062DA62 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B80292227620062DA62 /* UIView+Extension.swift */; };
 		CF0F1B852922284A0062DA62 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B842922284A0062DA62 /* SkeletonView.swift */; };
+		CF0F1B8729222C750062DA62 /* NWPathMonitor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B8629222C750062DA62 /* NWPathMonitor+Extension.swift */; };
+		CF0F1B8929222D0F0062DA62 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B8829222D0F0062DA62 /* NetworkManager.swift */; };
+		CF0F1B8C29222D640062DA62 /* DisconnectBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B8B29222D640062DA62 /* DisconnectBannerView.swift */; };
+		CF0F1B8E29222DA20062DA62 /* DisconnectBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0F1B8D29222DA20062DA62 /* DisconnectBannerView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		CF0F1B7E292226120062DA62 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CF0F1B80292227620062DA62 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CF0F1B842922284A0062DA62 /* SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
+		CF0F1B8629222C750062DA62 /* NWPathMonitor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NWPathMonitor+Extension.swift"; sourceTree = "<group>"; };
+		CF0F1B8829222D0F0062DA62 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CF0F1B8B29222D640062DA62 /* DisconnectBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectBannerView.swift; sourceTree = "<group>"; };
+		CF0F1B8D29222DA20062DA62 /* DisconnectBannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisconnectBannerView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 		CF0F1B3A29221F600062DA62 /* tawktoTest */ = {
 			isa = PBXGroup;
 			children = (
+				CF0F1B8A29222D4E0062DA62 /* Common */,
 				CF0F1B83292228380062DA62 /* Helper */,
 				CF0F1B7B292225D00062DA62 /* Extension */,
 				CF0F1B6E292220830062DA62 /* Features */,
@@ -179,6 +188,7 @@
 				CF0F1B7C292225EC0062DA62 /* UITableViewCell+Extension.swift */,
 				CF0F1B7E292226120062DA62 /* String+Extension.swift */,
 				CF0F1B80292227620062DA62 /* UIView+Extension.swift */,
+				CF0F1B8629222C750062DA62 /* NWPathMonitor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -187,8 +197,18 @@
 			isa = PBXGroup;
 			children = (
 				CF0F1B842922284A0062DA62 /* SkeletonView.swift */,
+				CF0F1B8829222D0F0062DA62 /* NetworkManager.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		CF0F1B8A29222D4E0062DA62 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B8B29222D640062DA62 /* DisconnectBannerView.swift */,
+				CF0F1B8D29222DA20062DA62 /* DisconnectBannerView.xib */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +318,7 @@
 				CF0F1B7A292224340062DA62 /* UserCell.xib in Resources */,
 				CF0F1B4B29221F620062DA62 /* LaunchScreen.storyboard in Resources */,
 				CF0F1B4829221F620062DA62 /* Assets.xcassets in Resources */,
+				CF0F1B8E29222DA20062DA62 /* DisconnectBannerView.xib in Resources */,
 				CF0F1B72292220980062DA62 /* UserListVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,10 +344,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF0F1B8929222D0F0062DA62 /* NetworkManager.swift in Sources */,
+				CF0F1B8C29222D640062DA62 /* DisconnectBannerView.swift in Sources */,
 				CF0F1B7F292226120062DA62 /* String+Extension.swift in Sources */,
 				CF0F1B852922284A0062DA62 /* SkeletonView.swift in Sources */,
 				CF0F1B7D292225EC0062DA62 /* UITableViewCell+Extension.swift in Sources */,
 				CF0F1B4629221F600062DA62 /* tawktoTest.xcdatamodeld in Sources */,
+				CF0F1B8729222C750062DA62 /* NWPathMonitor+Extension.swift in Sources */,
 				CF0F1B81292227620062DA62 /* UIView+Extension.swift in Sources */,
 				CF0F1B71292220980062DA62 /* UserListVC.swift in Sources */,
 				CF0F1B79292224340062DA62 /* UserCell.swift in Sources */,
