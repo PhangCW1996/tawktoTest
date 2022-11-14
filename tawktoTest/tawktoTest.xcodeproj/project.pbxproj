@@ -37,6 +37,7 @@
 		CF0F1BA029223D830062DA62 /* UserListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B9F29223D830062DA62 /* UserListRequest.swift */; };
 		CF0F1BA329223DBD0062DA62 /* UserListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BA229223DBD0062DA62 /* UserListResponse.swift */; };
 		CF0F1BA52922403B0062DA62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BA42922403B0062DA62 /* BaseViewController.swift */; };
+		CF0F1BA72922790E0062DA62 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BA62922790E0062DA62 /* UITableView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		CF0F1B9F29223D830062DA62 /* UserListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRequest.swift; sourceTree = "<group>"; };
 		CF0F1BA229223DBD0062DA62 /* UserListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListResponse.swift; sourceTree = "<group>"; };
 		CF0F1BA42922403B0062DA62 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CF0F1BA62922790E0062DA62 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				CF0F1B7E292226120062DA62 /* String+Extension.swift */,
 				CF0F1B80292227620062DA62 /* UIView+Extension.swift */,
 				CF0F1B8629222C750062DA62 /* NWPathMonitor+Extension.swift */,
+				CF0F1BA62922790E0062DA62 /* UITableView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				CF0F1B81292227620062DA62 /* UIView+Extension.swift in Sources */,
 				CF0F1B71292220980062DA62 /* UserListVC.swift in Sources */,
 				CF0F1B79292224340062DA62 /* UserCell.swift in Sources */,
+				CF0F1BA72922790E0062DA62 /* UITableView+Extension.swift in Sources */,
 				CF0F1B3C29221F600062DA62 /* AppDelegate.swift in Sources */,
 				CF0F1B752922216D0062DA62 /* UserDetailView.swift in Sources */,
 				CF0F1B9829223A980062DA62 /* UserListVM.swift in Sources */,

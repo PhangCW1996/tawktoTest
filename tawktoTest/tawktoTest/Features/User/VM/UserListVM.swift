@@ -29,13 +29,15 @@ final class UserListVM: BaseViewModel, ObservableObject {
     func apply(_ input: Input) {
         switch input {
         case .getUserList:
-            self.isNotfirstPage = true
+            self.isNotfirstPage = false
+            self.isLastPage = false
             self.since = 0
             self.request.params = ["since" : self.since]
             
             self.sendSubject.send(())
         case .getMoreUserList:
-            self.isNotfirstPage = false
+            self.isNotfirstPage = true
+            self.footLoading = true
             self.request.params = ["since" : self.since]
             
             self.sendSubject.send(())
@@ -43,7 +45,6 @@ final class UserListVM: BaseViewModel, ObservableObject {
     }
     
     // MARK: Output
-    let responseSubject = PassthroughSubject<UserListResponse, Never>()
     @Published private(set) var userList: [User] = []
     
     private lazy var apiService: APIService = {
@@ -54,7 +55,6 @@ final class UserListVM: BaseViewModel, ObservableObject {
         super.init()
         
         self.bindInputs()
-        self.bindOutputs()
     }
     
     private func bindInputs() {
@@ -64,35 +64,23 @@ final class UserListVM: BaseViewModel, ObservableObject {
         self.bindApiService(request: self.request, apiService: self.apiService, trigger: self.sendSubject) { [weak self] data in
             guard let `self` = self else { return }
             
-            self.responseSubject.send(data)
-           
-        }
-
-    }
-    
-    private func bindOutputs() {
-        self.responseSubject
-            .print()
-            .map {
-                
-                if self.isNotfirstPage {
-                    let new: [User] = $0.userList ?? []
-                    self.userList += new
-                }else {
-                    self.userList = $0.userList ?? []
-                }
-                
-                if let nextSince = $0.userList?.last?.id{
-                    self.since = nextSince
-                    print("nextsince \(self.since)")
-                }
-                
-                return $0.userList ?? []
+            self.footLoading = false
             
+            let data = data.userList ?? []
+            
+            if self.isNotfirstPage {
+                let new: [User] = data
+                
+                self.isLastPage = new.count == 0
+                self.userList += new
+            }else {
+                self.userList = data
             }
-            .assign(to: \.self.userList, on: self)
-            .store(in: &self.cancellables)
-    
+            
+            if let nextSince = data.last?.id{
+                self.since = nextSince
+            }
+        }
     }
     
 }

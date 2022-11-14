@@ -37,10 +37,6 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
         //        showSkeleton()
     }
     
-    @objc func refreshBottom() {
-        self.userVM.apply(.getUserList)
-    }
-    
     private func bind(){
         userVM.$userList
             .dropFirst()
@@ -48,6 +44,7 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
             .sink(receiveValue: { [weak self] list in
                 guard let `self` = self else { return }
                 self.tblView.reloadData()
+                self.tblView.stopLoading()
             })
             .store(in: &self.cancellables)
     }
@@ -83,5 +80,15 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
         self.navigationController?.pushViewController(hostingController, animated: true)
     }
     
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //Add bottom loading when reach the end
+        if !self.userVM.isLastPage && !self.userVM.footLoading{
+            tableView.addLoading(indexPath) {
+                self.userVM.apply(.getMoreUserList)
+            }
+        }
+    }
 
+    
 }

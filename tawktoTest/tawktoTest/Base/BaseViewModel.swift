@@ -18,6 +18,8 @@ class BaseViewModel {
     var page: Int = 1
     var totalPage: Int = 1
     var isNotfirstPage: Bool = false
+    var isLastPage: Bool = false
+
     private var retryTrigger = PassthroughSubject<Void, Never>()
     
     init() {
