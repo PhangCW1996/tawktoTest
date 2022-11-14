@@ -8,14 +8,21 @@
 import UIKit
 import SwiftUI
 
-class UserListVC: UIViewController,SkeletonDisplayable {
+class UserListVC: BaseViewController,SkeletonDisplayable {
     
     @IBOutlet weak var tblView: UITableView!
-
+    
+    private lazy var userVM: UserListVM = {
+        return UserListVM()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupTblView()
+        bind()
+        
+        userVM.apply(.getUserList)
         // Do any additional setup after loading the view.
     }
     
@@ -23,12 +30,27 @@ class UserListVC: UIViewController,SkeletonDisplayable {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
-         super.viewDidAppear(animated)
+        super.viewDidAppear(animated)
         
-//        showSkeleton()
-     }
+        //        showSkeleton()
+    }
+    
+    @objc func refreshBottom() {
+        self.userVM.apply(.getUserList)
+    }
+    
+    private func bind(){
+        userVM.$userList
+            .dropFirst()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] list in
+                guard let `self` = self else { return }
+                self.tblView.reloadData()
+            })
+            .store(in: &self.cancellables)
+    }
 }
 
 extension UserListVC: UITableViewDataSource, UITableViewDelegate{
@@ -42,14 +64,15 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return userVM.userList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as? UserCell{
             cell.selectionStyle = .none
             
-
+            cell.model = userVM.userList[indexPath.row]
+            
             return cell
         }
         return UITableViewCell()
@@ -60,5 +83,5 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
         self.navigationController?.pushViewController(hostingController, animated: true)
     }
     
-    
+
 }

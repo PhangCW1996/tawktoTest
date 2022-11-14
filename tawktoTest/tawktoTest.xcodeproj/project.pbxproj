@@ -28,6 +28,15 @@
 		CF0F1B8929222D0F0062DA62 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B8829222D0F0062DA62 /* NetworkManager.swift */; };
 		CF0F1B8C29222D640062DA62 /* DisconnectBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B8B29222D640062DA62 /* DisconnectBannerView.swift */; };
 		CF0F1B8E29222DA20062DA62 /* DisconnectBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0F1B8D29222DA20062DA62 /* DisconnectBannerView.xib */; };
+		CF0F1B93292239040062DA62 /* APIServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B90292239040062DA62 /* APIServiceModel.swift */; };
+		CF0F1B94292239040062DA62 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B91292239040062DA62 /* APIServiceError.swift */; };
+		CF0F1B95292239040062DA62 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B92292239040062DA62 /* APIService.swift */; };
+		CF0F1B9829223A980062DA62 /* UserListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B9729223A980062DA62 /* UserListVM.swift */; };
+		CF0F1B9A29223AC00062DA62 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B9929223AC00062DA62 /* BaseViewModel.swift */; };
+		CF0F1B9D29223B810062DA62 /* ApiLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B9C29223B810062DA62 /* ApiLoading.swift */; };
+		CF0F1BA029223D830062DA62 /* UserListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B9F29223D830062DA62 /* UserListRequest.swift */; };
+		CF0F1BA329223DBD0062DA62 /* UserListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BA229223DBD0062DA62 /* UserListResponse.swift */; };
+		CF0F1BA52922403B0062DA62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BA42922403B0062DA62 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +82,15 @@
 		CF0F1B8829222D0F0062DA62 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CF0F1B8B29222D640062DA62 /* DisconnectBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectBannerView.swift; sourceTree = "<group>"; };
 		CF0F1B8D29222DA20062DA62 /* DisconnectBannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisconnectBannerView.xib; sourceTree = "<group>"; };
+		CF0F1B90292239040062DA62 /* APIServiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceModel.swift; sourceTree = "<group>"; };
+		CF0F1B91292239040062DA62 /* APIServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
+		CF0F1B92292239040062DA62 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		CF0F1B9729223A980062DA62 /* UserListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVM.swift; sourceTree = "<group>"; };
+		CF0F1B9929223AC00062DA62 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		CF0F1B9C29223B810062DA62 /* ApiLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLoading.swift; sourceTree = "<group>"; };
+		CF0F1B9F29223D830062DA62 /* UserListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRequest.swift; sourceTree = "<group>"; };
+		CF0F1BA229223DBD0062DA62 /* UserListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListResponse.swift; sourceTree = "<group>"; };
+		CF0F1BA42922403B0062DA62 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +141,8 @@
 		CF0F1B3A29221F600062DA62 /* tawktoTest */ = {
 			isa = PBXGroup;
 			children = (
+				CF0F1B9B29223B720062DA62 /* Base */,
+				CF0F1B8F292238F50062DA62 /* ApiService */,
 				CF0F1B8A29222D4E0062DA62 /* Common */,
 				CF0F1B83292228380062DA62 /* Helper */,
 				CF0F1B7B292225D00062DA62 /* Extension */,
@@ -165,6 +185,8 @@
 		CF0F1B732922209C0062DA62 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				CF0F1BA129223DB60062DA62 /* Model */,
+				CF0F1B9629223A8F0062DA62 /* VM */,
 				CF0F1B76292224240062DA62 /* Cell */,
 				CF0F1B6F292220980062DA62 /* UserListVC.swift */,
 				CF0F1B70292220980062DA62 /* UserListVC.xib */,
@@ -209,6 +231,51 @@
 				CF0F1B8D29222DA20062DA62 /* DisconnectBannerView.xib */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		CF0F1B8F292238F50062DA62 /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B9E29223D770062DA62 /* API */,
+				CF0F1B92292239040062DA62 /* APIService.swift */,
+				CF0F1B91292239040062DA62 /* APIServiceError.swift */,
+				CF0F1B90292239040062DA62 /* APIServiceModel.swift */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
+		CF0F1B9629223A8F0062DA62 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B9729223A980062DA62 /* UserListVM.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		CF0F1B9B29223B720062DA62 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B9929223AC00062DA62 /* BaseViewModel.swift */,
+				CF0F1B9C29223B810062DA62 /* ApiLoading.swift */,
+				CF0F1BA42922403B0062DA62 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CF0F1B9E29223D770062DA62 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1B9F29223D830062DA62 /* UserListRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CF0F1BA129223DB60062DA62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1BA229223DBD0062DA62 /* UserListResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,19 +411,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF0F1BA329223DBD0062DA62 /* UserListResponse.swift in Sources */,
+				CF0F1BA029223D830062DA62 /* UserListRequest.swift in Sources */,
 				CF0F1B8929222D0F0062DA62 /* NetworkManager.swift in Sources */,
+				CF0F1B94292239040062DA62 /* APIServiceError.swift in Sources */,
 				CF0F1B8C29222D640062DA62 /* DisconnectBannerView.swift in Sources */,
+				CF0F1B93292239040062DA62 /* APIServiceModel.swift in Sources */,
 				CF0F1B7F292226120062DA62 /* String+Extension.swift in Sources */,
+				CF0F1B9A29223AC00062DA62 /* BaseViewModel.swift in Sources */,
 				CF0F1B852922284A0062DA62 /* SkeletonView.swift in Sources */,
+				CF0F1B95292239040062DA62 /* APIService.swift in Sources */,
 				CF0F1B7D292225EC0062DA62 /* UITableViewCell+Extension.swift in Sources */,
 				CF0F1B4629221F600062DA62 /* tawktoTest.xcdatamodeld in Sources */,
 				CF0F1B8729222C750062DA62 /* NWPathMonitor+Extension.swift in Sources */,
+				CF0F1BA52922403B0062DA62 /* BaseViewController.swift in Sources */,
 				CF0F1B81292227620062DA62 /* UIView+Extension.swift in Sources */,
 				CF0F1B71292220980062DA62 /* UserListVC.swift in Sources */,
 				CF0F1B79292224340062DA62 /* UserCell.swift in Sources */,
 				CF0F1B3C29221F600062DA62 /* AppDelegate.swift in Sources */,
 				CF0F1B752922216D0062DA62 /* UserDetailView.swift in Sources */,
+				CF0F1B9829223A980062DA62 /* UserListVM.swift in Sources */,
 				CF0F1B3E29221F600062DA62 /* SceneDelegate.swift in Sources */,
+				CF0F1B9D29223B810062DA62 /* ApiLoading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

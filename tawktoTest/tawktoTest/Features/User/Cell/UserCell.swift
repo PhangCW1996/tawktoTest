@@ -29,4 +29,12 @@ class UserCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    var model: User?{
+        didSet {
+            if let model = model{
+                lblName.text = model.login
+                lblType.text = (model.siteAdmin ?? false) ? "Site Admin" : "Normal"
+            }
+        }
+    }
 }
