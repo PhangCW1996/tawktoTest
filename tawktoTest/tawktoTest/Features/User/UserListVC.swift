@@ -22,8 +22,12 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
         setupTblView()
         bind()
         
-        userVM.apply(.getUserList)
+        refresh()
         // Do any additional setup after loading the view.
+    }
+    
+    override func refresh() {
+        userVM.apply(.getUserList)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class NetworkManager {
     
@@ -15,12 +16,13 @@ class NetworkManager {
     private let showFrame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 80)
     private let hideFrame: CGRect = CGRect(x: 0, y: -80, width: UIScreen.main.bounds.width, height: 80)
     var networtSatisfied: Bool = true
+    @Published var requiredRefresh = false
     
     func show() {
         let scenes = UIApplication.shared.connectedScenes
         let windowScenes = scenes.first as? UIWindowScene
         if let window = windowScenes?.windows.first{
-            
+            NetworkManager.shared.requiredRefresh = false
             self.networtSatisfied = false
             if self.banner == nil {
                 self.banner = DisconnectBannerView(frame: self.hideFrame, msg: "Network Disconnected")
@@ -41,6 +43,7 @@ class NetworkManager {
         let windowScenes = scenes.first as? UIWindowScene
         let _ = windowScenes?.windows.first
         
+        NetworkManager.shared.requiredRefresh = true
         self.networtSatisfied = true
         UIView.animate(withDuration: self.duration) { [weak self] in
             guard let `self` = self else { return }

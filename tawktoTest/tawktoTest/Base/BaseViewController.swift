@@ -16,6 +16,21 @@ class BaseViewController: UIViewController {
     func localized() {}
     func refresh() {}
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NetworkManager.shared.$requiredRefresh
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] refresh in
+                guard let `self` = self else { return }
+                
+                if refresh {
+                    self.refresh()
+                }
+            })
+            .store(in: &self.cancellables)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -27,7 +42,7 @@ class BaseViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.view.endEditing(true)
     }
-        
+    
     @objc private func pop() {
         if let leftBtnCallback = self.leftBtnCallback {
             leftBtnCallback()
