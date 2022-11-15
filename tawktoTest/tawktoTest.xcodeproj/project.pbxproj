@@ -42,6 +42,7 @@
 		CF0F1BBC292325840062DA62 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BBA292325840062DA62 /* User+CoreDataClass.swift */; };
 		CF0F1BBD292325840062DA62 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BBB292325840062DA62 /* User+CoreDataProperties.swift */; };
 		CF0F1BBF292335400062DA62 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BBE292335400062DA62 /* UITextField+Extension.swift */; };
+		CF0F1BC129233D3C0062DA62 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BC029233D3C0062DA62 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		CF0F1BBA292325840062DA62 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CF0F1BBB292325840062DA62 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CF0F1BBE292335400062DA62 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		CF0F1BC029233D3C0062DA62 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			children = (
 				CF0F1B842922284A0062DA62 /* SkeletonView.swift */,
 				CF0F1B8829222D0F0062DA62 /* NetworkManager.swift */,
+				CF0F1BC029233D3C0062DA62 /* ImageLoader.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				CF0F1BBD292325840062DA62 /* User+CoreDataProperties.swift in Sources */,
 				CF0F1B852922284A0062DA62 /* SkeletonView.swift in Sources */,
 				CF0F1B95292239040062DA62 /* APIService.swift in Sources */,
+				CF0F1BC129233D3C0062DA62 /* ImageLoader.swift in Sources */,
 				CF0F1B7D292225EC0062DA62 /* UITableViewCell+Extension.swift in Sources */,
 				CF0F1B8729222C750062DA62 /* NWPathMonitor+Extension.swift in Sources */,
 				CF0F1BA52922403B0062DA62 /* BaseViewController.swift in Sources */,

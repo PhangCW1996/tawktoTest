@@ -83,6 +83,7 @@ extension User {
     internal func update(item: UserModel) {
         self.login = item.login
         self.siteAdmin = item.siteAdmin ?? false
+        self.avatarUrl = item.avatarUrl
     }
 
     internal func addOrUpdateNote(note: String) {

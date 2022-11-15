@@ -32,4 +32,5 @@ struct UserModel: Codable {
     var id: Int?
     var login: String?
     var siteAdmin: Bool?
+    var avatarUrl: String?
 }

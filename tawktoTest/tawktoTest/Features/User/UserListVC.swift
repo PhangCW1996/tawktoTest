@@ -17,6 +17,22 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
         return UserListVM()
     }()
     
+    private let cache = NSCache<NSNumber, UIImage>()
+    private let utilityQueue = DispatchQueue.global(qos: .utility)
+    
+    private func loadImage(urlString: String,completion: @escaping (UIImage?) -> ()) {
+        utilityQueue.async {
+            let url = URL(string: urlString)!
+            
+            guard let data = try? Data(contentsOf: url) else { return }
+            let image = UIImage(data: data)
+            
+            DispatchQueue.main.async {
+                completion(image)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,7 +110,6 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
         self.navigationController?.pushViewController(hostingController, animated: true)
     }
     
-    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         //Add bottom loading when reach the end
         
@@ -106,6 +121,6 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
             }
         }
     }
-
+    
     
 }

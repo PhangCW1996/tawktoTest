@@ -12,6 +12,8 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblType: UILabel!
+    @IBOutlet weak var noteImg: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,9 +25,15 @@ class UserCell: UITableViewCell {
         lblType.text = "Type"
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        img.image = nil
+        noteImg.isHidden = false
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -35,7 +43,17 @@ class UserCell: UITableViewCell {
                 lblName.text = model.login
                 lblType.text = (model.siteAdmin ) ? "Site Admin" : "Normal"
                 
-                lblType.text = model.note
+                noteImg.isHidden = model.note?.isEmpty ?? true || model.note == ""
+                
+                if let imgUrl = model.avatarUrl, !imgUrl.isEmpty{
+                    ImageLoader.shared.loadImage(urlString: imgUrl) { [weak self] (urlStr,image) in
+                        guard let self = self, let image = image else { return }
+                        //If same url only set
+                        if urlStr == self.model?.avatarUrl{
+                            self.img.image = image
+                        }
+                    }
+                }
             }
         }
     }
