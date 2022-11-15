@@ -46,6 +46,8 @@
 		CF0F1BC5292388550062DA62 /* UserDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BC4292388550062DA62 /* UserDetailVM.swift */; };
 		CF0F1BC7292388970062DA62 /* UserDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BC6292388970062DA62 /* UserDetailRequest.swift */; };
 		CF0F1BC9292388BE0062DA62 /* UserDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BC8292388BE0062DA62 /* UserDetailResponse.swift */; };
+		CFC596392923E34700140700 /* UserNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC596372923E34700140700 /* UserNoteCell.swift */; };
+		CFC5963A2923E34700140700 /* UserNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFC596382923E34700140700 /* UserNoteCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		CF0F1BC4292388550062DA62 /* UserDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVM.swift; sourceTree = "<group>"; };
 		CF0F1BC6292388970062DA62 /* UserDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRequest.swift; sourceTree = "<group>"; };
 		CF0F1BC8292388BE0062DA62 /* UserDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailResponse.swift; sourceTree = "<group>"; };
+		CFC596372923E34700140700 /* UserNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNoteCell.swift; sourceTree = "<group>"; };
+		CFC596382923E34700140700 /* UserNoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserNoteCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +222,8 @@
 			children = (
 				CF0F1B77292224340062DA62 /* UserCell.swift */,
 				CF0F1B78292224340062DA62 /* UserCell.xib */,
+				CFC596372923E34700140700 /* UserNoteCell.swift */,
+				CFC596382923E34700140700 /* UserNoteCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -417,6 +423,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC5963A2923E34700140700 /* UserNoteCell.xib in Resources */,
 				CF0F1B7A292224340062DA62 /* UserCell.xib in Resources */,
 				CF0F1B4B29221F620062DA62 /* LaunchScreen.storyboard in Resources */,
 				CF0F1B4829221F620062DA62 /* Assets.xcassets in Resources */,
@@ -448,6 +455,7 @@
 			files = (
 				CF0F1BBF292335400062DA62 /* UITextField+Extension.swift in Sources */,
 				CF0F1BA329223DBD0062DA62 /* UserListResponse.swift in Sources */,
+				CFC596392923E34700140700 /* UserNoteCell.swift in Sources */,
 				CF0F1BC5292388550062DA62 /* UserDetailVM.swift in Sources */,
 				CF0F1BA029223D830062DA62 /* UserListRequest.swift in Sources */,
 				CF0F1B8929222D0F0062DA62 /* NetworkManager.swift in Sources */,

@@ -39,7 +39,7 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
         setupTblView()
         bind()
         
-//        refresh()
+        //        refresh()
         // Do any additional setup after loading the view.
     }
     
@@ -84,6 +84,7 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
     
     private func setupTblView(){
         tblView.register(UserCell.getNib(), forCellReuseIdentifier: UserCell.identifier)
+        tblView.register(UserNoteCell.getNib(), forCellReuseIdentifier: UserNoteCell.identifier)
         tblView.separatorStyle = .none
         tblView.delegate = self
         tblView.dataSource = self
@@ -95,16 +96,10 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as? UserCell{
-            cell.selectionStyle = .none
-            
-            cell.model = userVM.userList[indexPath.row]
-            
-           
-            
-            return cell
-        }
-        return UITableViewCell()
+        let model = userVM.userList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: model.type.getCellIdentifier()) as! CustomUserCell
+        cell.configure(withModel: userVM.userList[indexPath.row])
+        return cell as! UITableViewCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -127,6 +122,43 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
                 self.userVM.footLoading = true
                 self.userVM.apply(.getUserList)
             }
+        }
+    }
+    
+    
+}
+
+
+enum CustomUserType: String {
+    case normal
+    case note
+    
+    func getCellIdentifier() -> String{
+        switch self{
+        case .note:
+            return UserNoteCell.identifier
+        case .normal:
+            return UserCell.identifier
+        }
+    }
+}
+
+protocol CustomUserModel: AnyObject {
+    var type: CustomUserType { get }
+}
+
+protocol CustomUserCell: AnyObject {
+    func configure(withModel: CustomUserModel)
+}
+
+extension User:CustomUserModel{
+    
+    var type: CustomUserType {
+        get {
+            if self.note == "" || self.note == nil{
+                return .normal
+            }
+            return .note
         }
     }
     

@@ -1,25 +1,25 @@
 //
-//  UserCell.swift
+//  UserNoteCell.swift
 //  tawktoTest
 //
-//  Created by Superman on 14/11/2022.
+//  Created by Superman on 15/11/2022.
 //
 
 import UIKit
 
-class UserCell: UITableViewCell, CustomUserCell {
+class UserNoteCell: UITableViewCell, CustomUserCell {
 
-    
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblType: UILabel!
-
+    @IBOutlet weak var noteImg: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         backgroundColor = .clear
         selectionStyle = .none
-        
         img.cornerRadius = img.frame.height / 2
     }
     
@@ -39,6 +39,7 @@ class UserCell: UITableViewCell, CustomUserCell {
             self.model = model
         }
     }
+    
     
     var model: User?{
         didSet {
