@@ -20,6 +20,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         NetworkManager.shared.$requiredRefresh
+            .dropFirst()
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] refresh in
                 guard let `self` = self else { return }

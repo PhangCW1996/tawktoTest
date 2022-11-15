@@ -7,21 +7,24 @@
 
 
 import Foundation
+import UIKit
 import Combine
+import CoreData
 
 final class UserListVM: BaseViewModel, ObservableObject {
     
     private lazy var request: UserListRequest = {
         return UserListRequest()
     }()
-
-
+    
+    
     // MARK: Input
     private let sendSubject = PassthroughSubject<Void, Never>()
     
+    @Published var filter = ""
+    
     enum Input {
         case getUserList
-        case getMoreUserList
     }
     
     var since = 0
@@ -29,17 +32,7 @@ final class UserListVM: BaseViewModel, ObservableObject {
     func apply(_ input: Input) {
         switch input {
         case .getUserList:
-            self.isNotfirstPage = false
-            self.isLastPage = false
-            self.since = 0
             self.request.params = ["since" : self.since]
-            
-            self.sendSubject.send(())
-        case .getMoreUserList:
-            self.isNotfirstPage = true
-            self.footLoading = true
-            self.request.params = ["since" : self.since]
-            
             self.sendSubject.send(())
         }
     }
@@ -58,7 +51,7 @@ final class UserListVM: BaseViewModel, ObservableObject {
     }
     
     private func bindInputs() {
-         
+        
         self.bindLoading(loading: self.apiService.apiLoading)
         
         self.bindApiService(request: self.request, apiService: self.apiService, trigger: self.sendSubject) { [weak self] data in
@@ -68,19 +61,43 @@ final class UserListVM: BaseViewModel, ObservableObject {
             
             let data = data.userList ?? []
             
-            if self.isNotfirstPage {
-                let new: [User] = data
-                
-                self.isLastPage = new.count == 0
-                self.userList += new
-            }else {
-                self.userList = data
+            for userModel in data {
+                User.createOrUpdate(item: userModel, with: AppDelegate.sharedAppDelegate.coreDataStack)
             }
+        
+            AppDelegate.sharedAppDelegate.coreDataStack.saveContext() // Save changes in Core Data
             
-            if let nextSince = data.last?.id{
-                self.since = nextSince
+            self.isLastPage = data.count == 0
+            
+            let allUser =  User.getAllUsers(with: AppDelegate.sharedAppDelegate.coreDataStack)
+            self.userList = allUser
+            
+            if let nextSince = allUser.last?.id{
+                self.since = Int(nextSince)
             }
+                    
+            print("Alluser \(allUser.count)")
         }
+        
+        
+        
+        $filter
+            .dropFirst()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] keyword in
+                guard let `self` = self else { return }
+                if keyword == ""{
+                    let allUser =  User.getAllUsers(with: AppDelegate.sharedAppDelegate.coreDataStack)
+                    self.userList = allUser
+                }else{
+                    let allUser =  User.searchUsers(keyword: keyword ,with: AppDelegate.sharedAppDelegate.coreDataStack)
+                    self.userList = allUser
+                }
+            })
+            .store(in: &self.cancellables)
     }
+    
+    
+
     
 }

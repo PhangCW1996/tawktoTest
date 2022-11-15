@@ -33,7 +33,9 @@ class UserCell: UITableViewCell {
         didSet {
             if let model = model{
                 lblName.text = model.login
-                lblType.text = (model.siteAdmin ?? false) ? "Site Admin" : "Normal"
+                lblType.text = (model.siteAdmin ) ? "Site Admin" : "Normal"
+                
+                lblType.text = model.note
             }
         }
     }

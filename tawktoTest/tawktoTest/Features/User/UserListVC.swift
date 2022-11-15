@@ -10,6 +10,7 @@ import SwiftUI
 
 class UserListVC: BaseViewController,SkeletonDisplayable {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tblView: UITableView!
     
     private lazy var userVM: UserListVM = {
@@ -51,6 +52,15 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
                 self.tblView.stopLoading()
             })
             .store(in: &self.cancellables)
+        
+        searchBar.searchTextField.textPublisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] text in
+                guard let `self` = self else { return }
+                self.userVM.filter = text
+            })
+            .store(in: &self.cancellables)
+        
     }
 }
 
@@ -87,9 +97,12 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         //Add bottom loading when reach the end
-        if !self.userVM.isLastPage && !self.userVM.footLoading{
+        
+        //If is not last page and is not loading and not doing filter
+        if !self.userVM.isLastPage && !self.userVM.footLoading && self.userVM.filter == ""{
             tableView.addLoading(indexPath) {
-                self.userVM.apply(.getMoreUserList)
+                self.userVM.footLoading = true
+                self.userVM.apply(.getUserList)
             }
         }
     }

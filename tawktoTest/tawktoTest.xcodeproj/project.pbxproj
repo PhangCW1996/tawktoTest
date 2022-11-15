@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CF0F1B3C29221F600062DA62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B3B29221F600062DA62 /* AppDelegate.swift */; };
 		CF0F1B3E29221F600062DA62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B3D29221F600062DA62 /* SceneDelegate.swift */; };
-		CF0F1B4629221F600062DA62 /* tawktoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B4429221F600062DA62 /* tawktoTest.xcdatamodeld */; };
 		CF0F1B4829221F620062DA62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF0F1B4729221F620062DA62 /* Assets.xcassets */; };
 		CF0F1B4B29221F620062DA62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF0F1B4929221F620062DA62 /* LaunchScreen.storyboard */; };
 		CF0F1B5629221F620062DA62 /* tawktoTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1B5529221F620062DA62 /* tawktoTestTests.swift */; };
@@ -38,6 +37,11 @@
 		CF0F1BA329223DBD0062DA62 /* UserListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BA229223DBD0062DA62 /* UserListResponse.swift */; };
 		CF0F1BA52922403B0062DA62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BA42922403B0062DA62 /* BaseViewController.swift */; };
 		CF0F1BA72922790E0062DA62 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BA62922790E0062DA62 /* UITableView+Extension.swift */; };
+		CF0F1BAA29228F950062DA62 /* Users.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BA829228F940062DA62 /* Users.xcdatamodeld */; };
+		CF0F1BB92923249F0062DA62 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BB82923249F0062DA62 /* CoreDataStack.swift */; };
+		CF0F1BBC292325840062DA62 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BBA292325840062DA62 /* User+CoreDataClass.swift */; };
+		CF0F1BBD292325840062DA62 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BBB292325840062DA62 /* User+CoreDataProperties.swift */; };
+		CF0F1BBF292335400062DA62 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BBE292335400062DA62 /* UITextField+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +65,6 @@
 		CF0F1B3829221F600062DA62 /* tawktoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tawktoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0F1B3B29221F600062DA62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF0F1B3D29221F600062DA62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CF0F1B4529221F600062DA62 /* tawktoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tawktoTest.xcdatamodel; sourceTree = "<group>"; };
 		CF0F1B4729221F620062DA62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF0F1B4A29221F620062DA62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF0F1B4C29221F620062DA62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +96,11 @@
 		CF0F1BA229223DBD0062DA62 /* UserListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListResponse.swift; sourceTree = "<group>"; };
 		CF0F1BA42922403B0062DA62 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CF0F1BA62922790E0062DA62 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		CF0F1BA929228F940062DA62 /* Users.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Users.xcdatamodel; sourceTree = "<group>"; };
+		CF0F1BB82923249F0062DA62 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		CF0F1BBA292325840062DA62 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CF0F1BBB292325840062DA62 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CF0F1BBE292335400062DA62 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,7 @@
 		CF0F1B3A29221F600062DA62 /* tawktoTest */ = {
 			isa = PBXGroup;
 			children = (
+				CF0F1BAF292291810062DA62 /* CoreData */,
 				CF0F1B9B29223B720062DA62 /* Base */,
 				CF0F1B8F292238F50062DA62 /* ApiService */,
 				CF0F1B8A29222D4E0062DA62 /* Common */,
@@ -154,7 +163,6 @@
 				CF0F1B4729221F620062DA62 /* Assets.xcassets */,
 				CF0F1B4929221F620062DA62 /* LaunchScreen.storyboard */,
 				CF0F1B4C29221F620062DA62 /* Info.plist */,
-				CF0F1B4429221F600062DA62 /* tawktoTest.xcdatamodeld */,
 			);
 			path = tawktoTest;
 			sourceTree = "<group>";
@@ -214,6 +222,7 @@
 				CF0F1B80292227620062DA62 /* UIView+Extension.swift */,
 				CF0F1B8629222C750062DA62 /* NWPathMonitor+Extension.swift */,
 				CF0F1BA62922790E0062DA62 /* UITableView+Extension.swift */,
+				CF0F1BBE292335400062DA62 /* UITextField+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -279,6 +288,17 @@
 				CF0F1BA229223DBD0062DA62 /* UserListResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CF0F1BAF292291810062DA62 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F1BB82923249F0062DA62 /* CoreDataStack.swift */,
+				CF0F1BBA292325840062DA62 /* User+CoreDataClass.swift */,
+				CF0F1BBB292325840062DA62 /* User+CoreDataProperties.swift */,
+				CF0F1BA829228F940062DA62 /* Users.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,24 +434,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF0F1BBF292335400062DA62 /* UITextField+Extension.swift in Sources */,
 				CF0F1BA329223DBD0062DA62 /* UserListResponse.swift in Sources */,
 				CF0F1BA029223D830062DA62 /* UserListRequest.swift in Sources */,
 				CF0F1B8929222D0F0062DA62 /* NetworkManager.swift in Sources */,
+				CF0F1BB92923249F0062DA62 /* CoreDataStack.swift in Sources */,
 				CF0F1B94292239040062DA62 /* APIServiceError.swift in Sources */,
+				CF0F1BAA29228F950062DA62 /* Users.xcdatamodeld in Sources */,
 				CF0F1B8C29222D640062DA62 /* DisconnectBannerView.swift in Sources */,
 				CF0F1B93292239040062DA62 /* APIServiceModel.swift in Sources */,
 				CF0F1B7F292226120062DA62 /* String+Extension.swift in Sources */,
 				CF0F1B9A29223AC00062DA62 /* BaseViewModel.swift in Sources */,
+				CF0F1BBD292325840062DA62 /* User+CoreDataProperties.swift in Sources */,
 				CF0F1B852922284A0062DA62 /* SkeletonView.swift in Sources */,
 				CF0F1B95292239040062DA62 /* APIService.swift in Sources */,
 				CF0F1B7D292225EC0062DA62 /* UITableViewCell+Extension.swift in Sources */,
-				CF0F1B4629221F600062DA62 /* tawktoTest.xcdatamodeld in Sources */,
 				CF0F1B8729222C750062DA62 /* NWPathMonitor+Extension.swift in Sources */,
 				CF0F1BA52922403B0062DA62 /* BaseViewController.swift in Sources */,
 				CF0F1B81292227620062DA62 /* UIView+Extension.swift in Sources */,
 				CF0F1B71292220980062DA62 /* UserListVC.swift in Sources */,
 				CF0F1B79292224340062DA62 /* UserCell.swift in Sources */,
 				CF0F1BA72922790E0062DA62 /* UITableView+Extension.swift in Sources */,
+				CF0F1BBC292325840062DA62 /* User+CoreDataClass.swift in Sources */,
 				CF0F1B3C29221F600062DA62 /* AppDelegate.swift in Sources */,
 				CF0F1B752922216D0062DA62 /* UserDetailView.swift in Sources */,
 				CF0F1B9829223A980062DA62 /* UserListVM.swift in Sources */,
@@ -774,13 +798,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CF0F1B4429221F600062DA62 /* tawktoTest.xcdatamodeld */ = {
+		CF0F1BA829228F940062DA62 /* Users.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CF0F1B4529221F600062DA62 /* tawktoTest.xcdatamodel */,
+				CF0F1BA929228F940062DA62 /* Users.xcdatamodel */,
 			);
-			currentVersion = CF0F1B4529221F600062DA62 /* tawktoTest.xcdatamodel */;
-			path = tawktoTest.xcdatamodeld;
+			currentVersion = CF0F1BA929228F940062DA62 /* Users.xcdatamodel */;
+			path = Users.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

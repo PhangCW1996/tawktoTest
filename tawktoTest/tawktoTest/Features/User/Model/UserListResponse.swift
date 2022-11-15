@@ -6,16 +6,17 @@
 //
 
 import Foundation
+import CoreData
 
 class UserListResponse: Codable {
     
-    var userList: [User]?
+    var userList: [UserModel]?
     
     required init(from decoder: Decoder) throws {
         if var container = try? decoder.unkeyedContainer(){
-            var result = [User]()
+            var result = [UserModel]()
             while !container.isAtEnd{
-                result.append(try container.decode(User.self))
+                result.append(try container.decode(UserModel.self))
             }
             userList = result
         }else{
@@ -27,7 +28,7 @@ class UserListResponse: Codable {
 }
 
 
-struct User: Codable {
+struct UserModel: Codable {
     var id: Int?
     var login: String?
     var siteAdmin: Bool?
