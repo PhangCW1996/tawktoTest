@@ -38,7 +38,7 @@ final class UserListVM: BaseViewModel, ObservableObject {
     }
     
     // MARK: Output
-    @Published private(set) var userList: [User] = []
+    @Published var userList: [User] = []
     
     private lazy var apiService: APIService = {
         return APIService()
@@ -57,29 +57,34 @@ final class UserListVM: BaseViewModel, ObservableObject {
         self.bindApiService(request: self.request, apiService: self.apiService, trigger: self.sendSubject) { [weak self] data in
             guard let `self` = self else { return }
             
+            print("HERE ")
             self.footLoading = false
             
             let data = data.userList ?? []
             
-            for userModel in data {
-                User.createOrUpdate(item: userModel, with: AppDelegate.sharedAppDelegate.coreDataStack)
-            }
-        
-            AppDelegate.sharedAppDelegate.coreDataStack.saveContext() // Save changes in Core Data
-            
-            self.isLastPage = data.count == 0
-            
-            let allUser =  User.getAllUsers(with: AppDelegate.sharedAppDelegate.coreDataStack)
-            self.userList = allUser
-            
-            if let nextSince = allUser.last?.id{
-                self.since = Int(nextSince)
-            }
+            // Use private MOC to perform background task
+            let privateContext = AppDelegate.sharedAppDelegate.coreDataStack.privateMOC
+            privateContext.perform {
+                
+                for userModel in data {
+                    User.createOrUpdate(item: userModel, with: privateContext)
+                }
+                AppDelegate.sharedAppDelegate.coreDataStack.synchronize()
+    
+                DispatchQueue.main.async { [weak self] in
+                    guard let `self` = self else { return }
+                    self.isLastPage = data.count == 0
                     
-            print("Alluser \(allUser.count)")
+                    let allUser =  User.getAllUsers(with: AppDelegate.sharedAppDelegate.coreDataStack)
+                    self.userList = allUser
+                    
+                    if let nextSince = allUser.last?.id{
+                        self.since = Int(nextSince)
+                    }
+                    print("Alluser \(allUser.count)")
+                }
+            }
         }
-        
-        
         
         $filter
             .dropFirst()
@@ -98,6 +103,6 @@ final class UserListVM: BaseViewModel, ObservableObject {
     }
     
     
-
+    
     
 }

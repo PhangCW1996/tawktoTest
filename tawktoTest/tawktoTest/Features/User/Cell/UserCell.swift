@@ -47,7 +47,7 @@ class UserCell: UITableViewCell {
                 
                 if let imgUrl = model.avatarUrl, !imgUrl.isEmpty{
                     ImageLoader.shared.loadImage(urlString: imgUrl) { [weak self] (urlStr,image) in
-                        guard let self = self, let image = image else { return }
+                        guard let `self` = self, let image = image else { return }
                         //If same url only set
                         if urlStr == self.model?.avatarUrl{
                             self.img.image = image

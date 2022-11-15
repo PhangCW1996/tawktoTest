@@ -39,7 +39,7 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
         setupTblView()
         bind()
         
-        refresh()
+//        refresh()
         // Do any additional setup after loading the view.
     }
     
@@ -100,13 +100,21 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
             
             cell.model = userVM.userList[indexPath.row]
             
+           
+            
             return cell
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let hostingController = UIHostingController(rootView: UserDetailView())
+        let model = userVM.userList[indexPath.row]
+        var vc = UserDetailView(user: model)
+        vc.callback = { [weak self] user in
+            guard let `self` = self else { return }
+            self.userVM.userList[indexPath.row] = user
+        }
+        let hostingController = UIHostingController(rootView: vc)
         self.navigationController?.pushViewController(hostingController, animated: true)
     }
     

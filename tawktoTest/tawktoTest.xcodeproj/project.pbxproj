@@ -43,6 +43,9 @@
 		CF0F1BBD292325840062DA62 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BBB292325840062DA62 /* User+CoreDataProperties.swift */; };
 		CF0F1BBF292335400062DA62 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BBE292335400062DA62 /* UITextField+Extension.swift */; };
 		CF0F1BC129233D3C0062DA62 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BC029233D3C0062DA62 /* ImageLoader.swift */; };
+		CF0F1BC5292388550062DA62 /* UserDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BC4292388550062DA62 /* UserDetailVM.swift */; };
+		CF0F1BC7292388970062DA62 /* UserDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BC6292388970062DA62 /* UserDetailRequest.swift */; };
+		CF0F1BC9292388BE0062DA62 /* UserDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BC8292388BE0062DA62 /* UserDetailResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,9 @@
 		CF0F1BBB292325840062DA62 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CF0F1BBE292335400062DA62 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		CF0F1BC029233D3C0062DA62 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		CF0F1BC4292388550062DA62 /* UserDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVM.swift; sourceTree = "<group>"; };
+		CF0F1BC6292388970062DA62 /* UserDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRequest.swift; sourceTree = "<group>"; };
+		CF0F1BC8292388BE0062DA62 /* UserDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				CF0F1B9729223A980062DA62 /* UserListVM.swift */,
+				CF0F1BC4292388550062DA62 /* UserDetailVM.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -281,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				CF0F1B9F29223D830062DA62 /* UserListRequest.swift */,
+				CF0F1BC6292388970062DA62 /* UserDetailRequest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -289,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				CF0F1BA229223DBD0062DA62 /* UserListResponse.swift */,
+				CF0F1BC8292388BE0062DA62 /* UserDetailResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -439,6 +448,7 @@
 			files = (
 				CF0F1BBF292335400062DA62 /* UITextField+Extension.swift in Sources */,
 				CF0F1BA329223DBD0062DA62 /* UserListResponse.swift in Sources */,
+				CF0F1BC5292388550062DA62 /* UserDetailVM.swift in Sources */,
 				CF0F1BA029223D830062DA62 /* UserListRequest.swift in Sources */,
 				CF0F1B8929222D0F0062DA62 /* NetworkManager.swift in Sources */,
 				CF0F1BB92923249F0062DA62 /* CoreDataStack.swift in Sources */,
@@ -451,6 +461,7 @@
 				CF0F1BBD292325840062DA62 /* User+CoreDataProperties.swift in Sources */,
 				CF0F1B852922284A0062DA62 /* SkeletonView.swift in Sources */,
 				CF0F1B95292239040062DA62 /* APIService.swift in Sources */,
+				CF0F1BC7292388970062DA62 /* UserDetailRequest.swift in Sources */,
 				CF0F1BC129233D3C0062DA62 /* ImageLoader.swift in Sources */,
 				CF0F1B7D292225EC0062DA62 /* UITableViewCell+Extension.swift in Sources */,
 				CF0F1B8729222C750062DA62 /* NWPathMonitor+Extension.swift in Sources */,
@@ -464,6 +475,7 @@
 				CF0F1B752922216D0062DA62 /* UserDetailView.swift in Sources */,
 				CF0F1B9829223A980062DA62 /* UserListVM.swift in Sources */,
 				CF0F1B3E29221F600062DA62 /* SceneDelegate.swift in Sources */,
+				CF0F1BC9292388BE0062DA62 /* UserDetailResponse.swift in Sources */,
 				CF0F1B9D29223B810062DA62 /* ApiLoading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
