@@ -82,8 +82,5 @@ final class UserDetailVM: BaseViewModel, ObservableObject {
             AppDelegate.sharedAppDelegate.coreDataStack.synchronize()
         }
     }
-    
-    
-    
-    
+
 }

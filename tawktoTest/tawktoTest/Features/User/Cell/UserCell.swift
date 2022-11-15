@@ -7,13 +7,14 @@
 
 import UIKit
 
-class UserCell: UITableViewCell, CustomUserCell {
 
+class UserCell: UITableViewCell, CustomUserCell {
+    
     
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblType: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,6 +23,8 @@ class UserCell: UITableViewCell, CustomUserCell {
         
         img.cornerRadius = img.frame.height / 2
     }
+    
+    var requiredInvert = false
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -34,10 +37,13 @@ class UserCell: UITableViewCell, CustomUserCell {
         // Configure the view for the selected state
     }
     
-    func configure(withModel: CustomUserModel) {
+    func configure(withModel: CustomUserModel, row: Int) {
         if let model = withModel as? User{
             self.model = model
         }
+        
+        self.requiredInvert = (row % 4) == 0
+        
     }
     
     var model: User?{
@@ -52,10 +58,21 @@ class UserCell: UITableViewCell, CustomUserCell {
                         //If same url only set
                         if urlStr == self.model?.avatarUrl{
                             self.img.image = image
+                            
+                            if self.requiredInvert{
+                                self.invertImg()
+                            }
                         }
                     }
                 }
             }
         }
     }
+    
+    private func invertImg(){
+        self.img.image = img.image?.invertedImage()
+    }
+    
 }
+
+

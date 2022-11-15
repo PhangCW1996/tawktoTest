@@ -54,9 +54,9 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        //        showSkeleton()
     }
+    
+    
     
     private func bind(){
         userVM.$userList
@@ -64,6 +64,7 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] list in
                 guard let `self` = self else { return }
+            
                 self.tblView.reloadData()
                 self.tblView.stopLoading()
             })
@@ -98,7 +99,7 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = userVM.userList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: model.type.getCellIdentifier()) as! CustomUserCell
-        cell.configure(withModel: userVM.userList[indexPath.row])
+        cell.configure(withModel: userVM.userList[indexPath.row], row: indexPath.row + 1)
         return cell as! UITableViewCell
     }
     
@@ -148,7 +149,7 @@ protocol CustomUserModel: AnyObject {
 }
 
 protocol CustomUserCell: AnyObject {
-    func configure(withModel: CustomUserModel)
+    func configure(withModel: CustomUserModel, row: Int)
 }
 
 extension User:CustomUserModel{

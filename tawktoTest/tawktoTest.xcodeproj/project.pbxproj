@@ -48,6 +48,7 @@
 		CF0F1BC9292388BE0062DA62 /* UserDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0F1BC8292388BE0062DA62 /* UserDetailResponse.swift */; };
 		CFC596392923E34700140700 /* UserNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC596372923E34700140700 /* UserNoteCell.swift */; };
 		CFC5963A2923E34700140700 /* UserNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFC596382923E34700140700 /* UserNoteCell.xib */; };
+		CFC5963C2923FA7400140700 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5963B2923FA7400140700 /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		CF0F1BC8292388BE0062DA62 /* UserDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailResponse.swift; sourceTree = "<group>"; };
 		CFC596372923E34700140700 /* UserNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNoteCell.swift; sourceTree = "<group>"; };
 		CFC596382923E34700140700 /* UserNoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserNoteCell.xib; sourceTree = "<group>"; };
+		CFC5963B2923FA7400140700 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				CF0F1B8629222C750062DA62 /* NWPathMonitor+Extension.swift */,
 				CF0F1BA62922790E0062DA62 /* UITableView+Extension.swift */,
 				CF0F1BBE292335400062DA62 /* UITextField+Extension.swift */,
+				CFC5963B2923FA7400140700 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				CF0F1BB92923249F0062DA62 /* CoreDataStack.swift in Sources */,
 				CF0F1B94292239040062DA62 /* APIServiceError.swift in Sources */,
 				CF0F1BAA29228F950062DA62 /* Users.xcdatamodeld in Sources */,
+				CFC5963C2923FA7400140700 /* UIImage+Extension.swift in Sources */,
 				CF0F1B8C29222D640062DA62 /* DisconnectBannerView.swift in Sources */,
 				CF0F1B93292239040062DA62 /* APIServiceModel.swift in Sources */,
 				CF0F1B7F292226120062DA62 /* String+Extension.swift in Sources */,

@@ -8,12 +8,13 @@
 import UIKit
 
 class UserNoteCell: UITableViewCell, CustomUserCell {
-
+    
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblType: UILabel!
     @IBOutlet weak var noteImg: UIImageView!
     
+    var requiredInvert = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,9 +35,11 @@ class UserNoteCell: UITableViewCell, CustomUserCell {
         // Configure the view for the selected state
     }
     
-    func configure(withModel: CustomUserModel) {
+    func configure(withModel: CustomUserModel, row: Int) {
         if let model = withModel as? User{
             self.model = model
+            
+            self.requiredInvert = (row % 4) == 0
         }
     }
     
@@ -53,10 +56,18 @@ class UserNoteCell: UITableViewCell, CustomUserCell {
                         //If same url only set
                         if urlStr == self.model?.avatarUrl{
                             self.img.image = image
+                            
+                            if self.requiredInvert{
+                                self.invertImg()
+                            }
                         }
                     }
                 }
             }
         }
+    }
+    
+    private func invertImg(){
+        self.img.image = img.image?.invertedImage()
     }
 }
