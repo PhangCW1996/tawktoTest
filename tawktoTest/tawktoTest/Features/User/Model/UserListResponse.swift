@@ -50,6 +50,11 @@ struct UserModel: Codable {
         case name, company, blog
     }
     
+    init(id: Int, login: String){
+        self.id = id
+        self.login = login
+    }
+    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try? values.decode(Int.self, forKey: .id)

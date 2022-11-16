@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import CoreData
 @testable import tawktoTest
 
 class tawktoTestTests: XCTestCase {
@@ -31,6 +32,59 @@ class tawktoTestTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testCreateUser(){
+        let newsItemID = 1000
+        let context = AppDelegate.sharedAppDelegate.coreDataStack.privateMOC
+        let userFetch: NSFetchRequest<User> = User.fetchRequest()
+        
+        let newsItemIDPredicate = NSPredicate(format: "%K == %i", (\User.id)._kvcKeyPathString!, newsItemID)
+        userFetch.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [newsItemIDPredicate])
+        do {
+            let results = try context.fetch(userFetch)
+            
+            // 1 If True equal userId not exist then can proceed to create
+            XCTAssertTrue(results.isEmpty)
+            
+            // 2
+            expectation(
+              forNotification: .NSManagedObjectContextDidSave,
+              object: context) { _ in
+                return true
+            }
+
+            // 3
+            context.perform {
+                let userModel = UserModel.init(id: newsItemID, login: "TestName")
+                User.createOrUpdate(item: userModel, with: context)
+                XCTAssertNotNil(userModel)
+            }
+
+            // 4
+            waitForExpectations(timeout: 2.0) { error in
+              XCTAssertNil(error, "Save did not occur")
+            }
+            
+        } catch let error as NSError {
+            print("Fetch error: \(error) description: \(error.userInfo)")
+        }
+    }
+    
+    func testFetchUserById() {
+      //When
+      let userId = 1
+        
+      let context = AppDelegate.sharedAppDelegate.coreDataStack.privateMOC
+      let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+       
+      fetchRequest.predicate =  NSPredicate(format: "%K == %i", (\User.id)._kvcKeyPathString!, userId)
+      let result = try? context.fetch(fetchRequest)
+      let finalProduct1 = result?.first
+      //Then
+        XCTAssertEqual(result?.count, 1)
+        XCTAssertEqual(Int(finalProduct1?.id ?? 0), userId)
+
     }
 
 }
