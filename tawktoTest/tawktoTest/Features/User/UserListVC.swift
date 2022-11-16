@@ -104,7 +104,7 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = userVM.userList[indexPath.row]
+        let model = userVM.userList[indexPath.row] as? User
         var vc = UserDetailView(user: model)
         vc.callback = { [weak self] user in
             guard let `self` = self else { return }
@@ -162,6 +162,4 @@ extension User:CustomUserModel{
             return .note
         }
     }
-    
-    
 }

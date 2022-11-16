@@ -29,6 +29,7 @@ class UserCell: UITableViewCell, CustomUserCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         img.image = nil
+        backgroundColor = .clear
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,9 +42,7 @@ class UserCell: UITableViewCell, CustomUserCell {
         if let model = withModel as? User{
             self.model = model
         }
-        
         self.requiredInvert = (row % 4) == 0
-        
     }
     
     var model: User?{
@@ -51,6 +50,10 @@ class UserCell: UITableViewCell, CustomUserCell {
             if let model = model{
                 lblName.text = model.login
                 lblType.text = (model.siteAdmin ) ? "Site Admin" : "Normal"
+                
+                if model.seen{
+                    backgroundColor = .lightGray.withAlphaComponent(0.2)
+                }
                 
                 if let imgUrl = model.avatarUrl, !imgUrl.isEmpty{
                     ImageLoader.shared.loadImage(urlString: imgUrl) { [weak self] (urlStr,image) in

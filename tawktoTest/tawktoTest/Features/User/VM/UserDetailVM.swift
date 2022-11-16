@@ -35,6 +35,7 @@ final class UserDetailVM: BaseViewModel, ObservableObject {
     @Published private(set) var userList: [User] = []
     
     @Published var user: User?
+    @Published var requiredRefresh = false
     
     private lazy var apiService: APIService = {
         return APIService()
@@ -80,6 +81,20 @@ final class UserDetailVM: BaseViewModel, ObservableObject {
             
             self.user?.addOrUpdateNote(note: note)
             AppDelegate.sharedAppDelegate.coreDataStack.synchronize()
+            self.requiredRefresh = true
+        }
+    }
+    
+    func updateSeen(){
+        if !(self.user?.seen ?? false) {
+            // Use private MOC to perform background task
+            let privateContext = AppDelegate.sharedAppDelegate.coreDataStack.privateMOC
+            privateContext.perform {
+                
+                self.user?.updateSeen()
+                AppDelegate.sharedAppDelegate.coreDataStack.synchronize()
+                self.requiredRefresh = true
+            }
         }
     }
 

@@ -18,6 +18,7 @@ struct UserDetailView: View {
         return UserDetailVM()
     }()
     
+    @Environment(\.presentationMode) var presentationMode
     @State private var viewDidLoad = false
     
     @State private var image: Image?
@@ -51,8 +52,6 @@ struct UserDetailView: View {
                     }.padding()
                 }.border(.blue).padding(.horizontal,16)
                 
-                
-                
                 Text("Notes:").frame(maxWidth: .infinity,alignment: .leading).padding(.horizontal)
                 ZStack{
                     TextEditor(text: $noteInput).padding(.horizontal,8).frame(minHeight:44)
@@ -62,10 +61,6 @@ struct UserDetailView: View {
                 Button("Save") {
                     if noteInput != vm.user?.note{
                         vm.saveNote(note: noteInput)
-                        
-                        if let user = vm.user{
-                            callback?(user)
-                        }
                     }
                 }.padding(.bottom,16)
             }
@@ -82,6 +77,9 @@ struct UserDetailView: View {
     }
     
     private func bind(){
+        //Update Seen
+        vm.updateSeen()
+        
         vm.apply(.getUserDetail)
         
         vm.$user
@@ -96,6 +94,18 @@ struct UserDetailView: View {
                     }
                 })
                 
+            })
+            .store(in: &vm.cancellables)
+        
+        vm.$requiredRefresh
+            .dropFirst()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { refresh in
+                if refresh{
+                    if let user = vm.user{
+                        callback?(user)
+                    }
+                }
             })
             .store(in: &vm.cancellables)
     }

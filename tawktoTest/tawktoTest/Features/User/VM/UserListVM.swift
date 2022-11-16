@@ -38,7 +38,7 @@ final class UserListVM: BaseViewModel, ObservableObject {
     }
     
     // MARK: Output
-    @Published var userList: [User] = []
+    @Published var userList: [CustomUserModel] = []
     
     private lazy var apiService: APIService = {
         return APIService()

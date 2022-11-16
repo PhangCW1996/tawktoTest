@@ -10,9 +10,10 @@
         <attribute name="login" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="seen" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="siteAdmin" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="179"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="194"/>
     </elements>
 </model>

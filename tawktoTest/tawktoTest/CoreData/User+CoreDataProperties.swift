@@ -29,6 +29,8 @@ extension User {
     @NSManaged public var following: Int32
     @NSManaged public var followers: Int32
     
+    @NSManaged public var seen: Bool
+    
     internal class func getAllUsers(with stack: CoreDataStack) -> [User]{
         let userFetch: NSFetchRequest<User> = User.fetchRequest()
         let sortById = NSSortDescriptor(key: (\User.id)._kvcKeyPathString!, ascending: true)
@@ -135,6 +137,10 @@ extension User {
 
     internal func addOrUpdateNote(note: String) {
         self.note = note
+    }
+    
+    internal func updateSeen() {
+        self.seen = true
     }
 }
 

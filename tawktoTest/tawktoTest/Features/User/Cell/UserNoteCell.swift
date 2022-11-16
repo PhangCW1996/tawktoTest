@@ -50,6 +50,10 @@ class UserNoteCell: UITableViewCell, CustomUserCell {
                 lblName.text = model.login
                 lblType.text = (model.siteAdmin ) ? "Site Admin" : "Normal"
                 
+                if model.seen{
+                    backgroundColor = .lightGray.withAlphaComponent(0.2)
+                }
+                
                 if let imgUrl = model.avatarUrl, !imgUrl.isEmpty{
                     ImageLoader.shared.loadImage(urlString: imgUrl) { [weak self] (urlStr,image) in
                         guard let `self` = self, let image = image else { return }
