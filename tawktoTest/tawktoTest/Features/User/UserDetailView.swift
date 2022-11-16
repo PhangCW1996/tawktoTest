@@ -18,11 +18,8 @@ struct UserDetailView: View {
         return UserDetailVM()
     }()
     
-    @Environment(\.presentationMode) var presentationMode
     @State private var viewDidLoad = false
-    
     @State private var image: Image?
-    
     @State private var noteInput = ""
     
     var callback: ((User) -> ())?

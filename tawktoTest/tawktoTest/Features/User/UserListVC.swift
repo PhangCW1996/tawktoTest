@@ -16,23 +16,7 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
     private lazy var userVM: UserListVM = {
         return UserListVM()
     }()
-    
-    private let cache = NSCache<NSNumber, UIImage>()
-    private let utilityQueue = DispatchQueue.global(qos: .utility)
-    
-    private func loadImage(urlString: String,completion: @escaping (UIImage?) -> ()) {
-        utilityQueue.async {
-            let url = URL(string: urlString)!
-            
-            guard let data = try? Data(contentsOf: url) else { return }
-            let image = UIImage(data: data)
-            
-            DispatchQueue.main.async {
-                completion(image)
-            }
-        }
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

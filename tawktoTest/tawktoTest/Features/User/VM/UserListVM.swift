@@ -57,7 +57,6 @@ final class UserListVM: BaseViewModel, ObservableObject {
         self.bindApiService(request: self.request, apiService: self.apiService, trigger: self.sendSubject) { [weak self] data in
             guard let `self` = self else { return }
             
-            print("HERE ")
             self.footLoading = false
             
             let data = data.userList ?? []
@@ -81,7 +80,6 @@ final class UserListVM: BaseViewModel, ObservableObject {
                     if let nextSince = allUser.last?.id{
                         self.since = Int(nextSince)
                     }
-                    print("Alluser \(allUser.count)")
                 }
             }
         }

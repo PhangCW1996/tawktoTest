@@ -36,12 +36,6 @@ extension User {
         let sortById = NSSortDescriptor(key: (\User.id)._kvcKeyPathString!, ascending: true)
         userFetch.sortDescriptors = [sortById]
         do {
-            if Thread.isMainThread{
-                print("main")
-            }else{
-                print("off main")
-            }
-            
             let managedContext = stack.managedContext
             let results = try managedContext.fetch(userFetch)
             return results
