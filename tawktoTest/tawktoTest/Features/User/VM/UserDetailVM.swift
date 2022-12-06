@@ -54,10 +54,9 @@ final class UserDetailVM: BaseViewModel, ObservableObject {
         self.bindApiService(request: self.request, apiService: self.apiService, trigger: self.sendSubject) { [weak self] data in
             guard let `self` = self else { return }
             if let model = data.data {
-                // Use private MOC to perform background task
-                let privateContext = AppDelegate.sharedAppDelegate.coreDataStack.privateMOC
-                privateContext.perform {
-                    
+                
+                DispatchQueue.global().async {
+    
                     self.user?.updateUserDetail(item: model)
                     AppDelegate.sharedAppDelegate.coreDataStack.synchronize()
         
@@ -74,26 +73,34 @@ final class UserDetailVM: BaseViewModel, ObservableObject {
         
     }
     
+    //Save CD note
     func saveNote(note: String){
         // Use private MOC to perform background task
         let privateContext = AppDelegate.sharedAppDelegate.coreDataStack.privateMOC
-        privateContext.perform {
-            
-            self.user?.addOrUpdateNote(note: note)
-            AppDelegate.sharedAppDelegate.coreDataStack.synchronize()
-            self.requiredRefresh = true
+        DispatchQueue.global().async { [weak self] in
+            guard let `self` = self else { return }
+            privateContext.perform {
+                self.user?.addOrUpdateNote(note: note)
+                AppDelegate.sharedAppDelegate.coreDataStack.synchronize()
+                self.requiredRefresh = true
+            }
         }
+
     }
     
+    //Update CD seen
     func updateSeen(){
         if !(self.user?.seen ?? false) {
             // Use private MOC to perform background task
             let privateContext = AppDelegate.sharedAppDelegate.coreDataStack.privateMOC
-            privateContext.perform {
-                
-                self.user?.updateSeen()
-                AppDelegate.sharedAppDelegate.coreDataStack.synchronize()
-                self.requiredRefresh = true
+            DispatchQueue.global().async { [weak self] in
+                guard let `self` = self else { return }
+                privateContext.perform {
+                    
+                    self.user?.updateSeen()
+                    AppDelegate.sharedAppDelegate.coreDataStack.synchronize()
+                    self.requiredRefresh = true
+                }
             }
         }
     }

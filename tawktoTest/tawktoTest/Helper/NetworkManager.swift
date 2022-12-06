@@ -13,8 +13,8 @@ class NetworkManager {
     static let shared = NetworkManager()
     private let duration: TimeInterval = 0.25
     private var banner: DisconnectBannerView?
-    private let showFrame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 80)
-    private let hideFrame: CGRect = CGRect(x: 0, y: -80, width: UIScreen.main.bounds.width, height: 80)
+    private let showFrame: CGRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50)
+    private let hideFrame: CGRect = CGRect(x: 0, y: -50, width: UIScreen.main.bounds.width, height: 50)
     var networtSatisfied: Bool = true
     @Published var requiredRefresh = false
     

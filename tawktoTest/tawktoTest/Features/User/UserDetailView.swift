@@ -63,7 +63,7 @@ struct UserDetailView: View {
             }
             .padding(.horizontal,8)
         }
-        .padding(.bottom,16)
+        .padding(.vertical,16)
         .navigationTitle(vm.user?.login ?? "")
         .onAppear {
             if viewDidLoad == false {

@@ -23,6 +23,8 @@ class BaseViewModel {
     private var retryTrigger = PassthroughSubject<Void, Never>()
     
     init() {
+        // Loading View To Be done
+        
 //        self.$loading
 //            .receive(on: DispatchQueue.main)
 //            .sink(receiveValue: { [weak self] isLoading in
@@ -60,7 +62,6 @@ class BaseViewModel {
             msg = "\(msg)\n[\(path)]"
         }
         #endif
-//        MsgManager.shared.show(msg: msg, duration: duration)
     }
     
     func isValidPage() -> Bool {

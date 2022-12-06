@@ -22,8 +22,7 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
         
         setupTblView()
         bind()
-        
-        //        refresh()
+    
         // Do any additional setup after loading the view.
     }
     
@@ -40,9 +39,9 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
         super.viewDidAppear(animated)
     }
     
-    
-    
     private func bind(){
+        searchBar.delegate = self
+        
         userVM.$userList
             .dropFirst()
             .receive(on: DispatchQueue.main)
@@ -62,6 +61,13 @@ class UserListVC: BaseViewController,SkeletonDisplayable {
             })
             .store(in: &self.cancellables)
         
+    }
+}
+
+//SearchBar Delegate
+extension UserListVC: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder() // hides the keyboard.
     }
 }
 
@@ -109,8 +115,7 @@ extension UserListVC: UITableViewDataSource, UITableViewDelegate{
             }
         }
     }
-    
-    
+
 }
 
 

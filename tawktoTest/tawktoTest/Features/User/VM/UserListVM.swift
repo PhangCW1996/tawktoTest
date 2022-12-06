@@ -48,6 +48,7 @@ final class UserListVM: BaseViewModel, ObservableObject {
         super.init()
         
         self.bindInputs()
+        self.loadLocalUserList()
     }
     
     private func bindInputs() {
@@ -61,27 +62,30 @@ final class UserListVM: BaseViewModel, ObservableObject {
             
             let data = data.userList ?? []
             
-            // Use private MOC to perform background task
             let privateContext = AppDelegate.sharedAppDelegate.coreDataStack.privateMOC
-            privateContext.perform {
+            // Use private MOC to perform background task
+            DispatchQueue.global().async {
                 
-                for userModel in data {
-                    User.createOrUpdate(item: userModel, with: privateContext)
-                }
-                AppDelegate.sharedAppDelegate.coreDataStack.synchronize()
-    
-                DispatchQueue.main.async { [weak self] in
-                    guard let `self` = self else { return }
-                    self.isLastPage = data.count == 0
-                    
-                    let allUser =  User.getAllUsers(with: AppDelegate.sharedAppDelegate.coreDataStack)
-                    self.userList = allUser
-                    
-                    if let nextSince = allUser.last?.id{
-                        self.since = Int(nextSince)
+                privateContext.perform {
+                    for userModel in data {
+                        User.createOrUpdate(item: userModel, with: privateContext)
+                    }
+                    AppDelegate.sharedAppDelegate.coreDataStack.synchronize()
+        
+                    DispatchQueue.main.sync { [weak self] in
+                        guard let `self` = self else { return }
+                        self.isLastPage = data.count == 0
+                        
+                        let allUser =  User.getAllUsers(with: AppDelegate.sharedAppDelegate.coreDataStack)
+                        self.userList = allUser
+                        
+                        if let nextSince = allUser.last?.id{
+                            self.since = Int(nextSince)
+                        }
                     }
                 }
             }
+            
         }
         
         $filter
@@ -100,7 +104,10 @@ final class UserListVM: BaseViewModel, ObservableObject {
             .store(in: &self.cancellables)
     }
     
-    
+    private func loadLocalUserList(){
+        let allUser =  User.getAllUsers(with: AppDelegate.sharedAppDelegate.coreDataStack)
+        self.userList = allUser
+    }
     
     
 }
