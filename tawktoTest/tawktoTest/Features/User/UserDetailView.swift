@@ -22,6 +22,8 @@ struct UserDetailView: View {
     @State private var image: Image?
     @State private var noteInput = ""
     
+    @FocusState private var noteIsFocused: Bool
+    
     var callback: ((User) -> ())?
     
     var body: some View {
@@ -52,10 +54,12 @@ struct UserDetailView: View {
                 Text("Notes:").frame(maxWidth: .infinity,alignment: .leading).padding(.horizontal)
                 ZStack{
                     TextEditor(text: $noteInput).padding(.horizontal,8).frame(minHeight:44)
+                        .focused($noteIsFocused)
                     
                 }.border(.blue).padding(.horizontal,16)
                 
                 Button("Save") {
+                    noteIsFocused = false
                     if noteInput != vm.user?.note{
                         vm.saveNote(note: noteInput)
                     }
